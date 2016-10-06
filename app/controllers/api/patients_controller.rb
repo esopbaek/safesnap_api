@@ -16,7 +16,7 @@ class Api::PatientsController < ApplicationController
   end
 
   def index
-    @patients = Patient.all
+    @patients = current_user.patients
     render json: @patients
   end
 

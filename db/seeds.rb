@@ -20,7 +20,7 @@ dr_wilson.patients.create({email: "max@gmail.com", password: "abcdefgh", first_n
 ben = dr_wilson.patients.first
 ben.save!
 
-# bens_foot_set = ben.image_sets.create({name: "Foot", description: "Patient is a 66 y/o male with a history of type 2 diabetes, complicated by retinopathy, CAD, and peripheral disease. Treated with toe amputation."})
+bens_foot_set = ben.image_sets.create({name: "Foot", description: "Patient is a 66 y/o male with a history of type 2 diabetes, complicated by retinopathy, CAD, and peripheral disease. Treated with toe amputation."})
 bens_foot_set = ImageSet.first
 bens_foot_set.images.create({url: "http://localhost:3000/assets/wound_imgs/week_1.JPG", description: "Week 5", created_at: Date.today})
 bens_foot_set.images.create({url: "http://localhost:3000/assets/wound_imgs/week_2.JPG", description: "Week 4", created_at: 1.week.ago})
