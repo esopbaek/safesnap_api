@@ -2,7 +2,7 @@ class Api::PatientsController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def create
-    @patient = Patient.new(patient_params.merge({email: "test#{rand(1000)}@test.com}", password: "abcdefgh"}))
+    @patient = current_user.patients.new(patient_params.merge({email: "test#{rand(1000)}@test.com}", password: "abcdefgh"}))
     if @patient.save
       render json: @patient
     else
