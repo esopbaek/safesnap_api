@@ -10,7 +10,7 @@ class ImageSetSerializer < ActiveModel::Serializer
       {id: img.id, url: img.url, added_date: img.created_at.strftime("%b %d, %Y"), desc: img.description}
     end
 
-    image_array
+    image_array.reverse!
   end
 end
 class ImageSetSerializer < ActiveModel::Serializer
