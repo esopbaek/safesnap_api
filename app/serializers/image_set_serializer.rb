@@ -6,7 +6,7 @@ class ImageSetSerializer < ActiveModel::Serializer
   end
 
   def images
-    image_array = object.images.map do |img|
+    image_array = object.images.sort_by {|image| image.created_at }.map do |img|
       {id: img.id, url: img.url, added_date: img.created_at.strftime("%b %d, %Y"), desc: img.description}
     end
 
